@@ -6,17 +6,19 @@ const { tweakSigner } = require('./utils/tweakSigner.js')
 const ECPair = ECPairFactory(ecc)
 bitcoin.initEccLib(ecc)
 
+const mempoolBaseURL = `https://mempool.space/testnet4/api`
+
 const blockstreamBaseURL = 'https://blockstream.info/testnet/api'
-const txURL = `${blockstreamBaseURL}/tx`
+const txURL = `${mempoolBaseURL}/tx`
 const txInfoURL = (txHash) => `${txURL}/${txHash}`
-const utxoURL = (address) => `${blockstreamBaseURL}/address/${address}/utxo`
+const utxoURL = (address) => `${mempoolBaseURL}/address/${address}/utxo`
 const runesBaseURL = 'https://api-testnet.unisat.io/query-v4'
 const runeByIdURL = (runeId) => `${runesBaseURL}/runes/${runeId}/info`
 const runeByNameURL = (name) => `${runesBaseURL}/runes/info-list?rune=${name}&limit=500`
 const runesByAddressURL = (address) => `${runesBaseURL}/address/${address}/runes/balance-list`
 const runeUtxosForAddressURL = (address, runeId) => `${runesBaseURL}/address/${address}/runes/${runeId}/utxo`
-const estimateURL = `${blockstreamBaseURL}/fee-estimates`
-const getTipURL = `${blockstreamBaseURL}/blocks/tip/height`
+const estimateURL = `${mempoolBaseURL}/v1/fees/recommended`
+const getTipURL = `${mempoolBaseURL}/blocks/tip/height`
 const testnetNetwork = bitcoin.networks.testnet
 
 let _taprootAddress, _wif, _tweakedSigner, _feeEstimate, _feePerVByte
