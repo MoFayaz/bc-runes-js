@@ -41,7 +41,7 @@ function setfeePerVByte(feePerVByte) {
 
 function setSigner(wif) {
   const untweakedSigner = ECPair.fromWIF(wif, testnetNetwork)
-  _tweakedSigner = tweakSigner(untweakedSigner)
+  _tweakedSigner = untweakedSigner
 }
 
 function init({ taprootAddress, wif, feePerVByte, estimate }) {

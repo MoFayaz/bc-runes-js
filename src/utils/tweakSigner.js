@@ -25,7 +25,7 @@ function tweakSigner(signer) {
 
   const tweakedPrivateKey = ecc.privateAdd(
       privateKey,
-      tapTweakHash(toXOnly(signer.publicKey)),
+      toXOnly(signer.publicKey),
   )
 
   if (!tweakedPrivateKey) {
