@@ -12,7 +12,7 @@ const blockstreamBaseURL = 'https://blockstream.info/testnet/api'
 const txURL = `${mempoolBaseURL}/tx`
 const txInfoURL = (txHash) => `${txURL}/${txHash}`
 const utxoURL = (address) => `${mempoolBaseURL}/address/${address}/utxo`
-const runesBaseURL = 'https://open-api-testnet4.unisat.io/query-v4'
+const runesBaseURL = 'https://open-api-testnet4.unisat.io/v1/indexer'
 const runeByIdURL = (runeId) => `${runesBaseURL}/runes/${runeId}/info`
 const runeByNameURL = (name) => `${runesBaseURL}/runes/info-list?rune=${name}&limit=500`
 const runesByAddressURL = (address) => `${runesBaseURL}/address/${address}/runes/balance-list`
