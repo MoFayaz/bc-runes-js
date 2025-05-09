@@ -1,5 +1,5 @@
 {
-  "name": "bc-runes-js",
+  "name": "@mfayaz/bc-runes-js",
   "version": "0.3.2",
   "main": "./index.js",
   "scripts": {
